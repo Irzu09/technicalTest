@@ -1,24 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from 'react';
+// import styles from './App.css';
+import TechnicalTest1 from './components/TechnicalTest1';
+import TechnicalTest3 from './components/TechnicalTest3';
 
 function App() {
+  const [page, setPage] = useState(false);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <button onClick={() => setPage(true)} className='mr-2'>Technical Test 1</button>
+      <button onClick={() => setPage(false)}>Technical Test 3</button>
+      <div className='m-3'>
+        {page ? <TechnicalTest1 /> : <TechnicalTest3 />}
+      </div>
+    </>
   );
 }
 
