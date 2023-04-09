@@ -1,14 +1,43 @@
-.keyboard>div {
+.mainContainer {
+    max-width: 400px;
+    max-height: 800px;
+    width: 96%;
+    height: 88vh;
+    margin: auto;
+    border: 1px solid black;
+    background-color: black;
+}
+
+.sectionDisplay {
+    height: 40%;
+    padding: 10px;
+}
+
+.sectionKeyboard {
+    height: 60%;
+    padding: 10px;
+}
+
+.sectionKeyboard>div {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.sectionKeyboard,
+.sectionKeyboard>div>div {
     display: flex;
 }
 
-.keyboard>div>div {
+.sectionKeyboard>div>div>div {
     display: flex;
     border-radius: 50%;
-    width: 35px;
-    height: 35px;
+    width: 70px;
+    height: 70px;
     font-weight: bold;
     letter-spacing: 0.5px;
+    margin: auto;
+    font-size: 30px;
 }
 
 .greyCircle {
@@ -16,14 +45,46 @@
 }
 
 .blackCircle {
-    background-color: #666;
+    background-color: #333;
+    color: #fff;
 }
 
-.greyCircle span, .blackCircle span {
+.orangeCircle {
+    background-color: #fe9f06;
+    color: #fff;
+}
+
+.zero {
+    width: 155px !important;
+    border-radius: 50px !important;
+}
+
+.zero span {
+    margin-left: 30px !important;
+}
+
+.greyCircle span,
+.blackCircle span,
+.orangeCircle span {
     margin: auto;
 }
 
-.blackArea, .greyArea {
-    width: 120px;
+.blackArea,
+.greyArea {
     flex-wrap: wrap;
+    gap: 10px;
+}
+
+.orangeArea {
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.input {
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    font-size: 64px;
+    position: relative;
+    bottom: 0;
 }

@@ -6,6 +6,8 @@ function TechnicalTest1() {
       return (<div className="greyCircle"><span>{symbol}</span></div>)
     else if (category === "black")
       return (<div className="blackCircle"><span>{symbol}</span></div>)
+    else if (category === "orange")
+      return (<div className="orangeCircle"><span>{symbol}</span></div>)
 
   };
 
@@ -38,26 +40,43 @@ function TechnicalTest1() {
   return (
     <div>
       <h5>Technical test 1: Basic Calculator</h5>
-      <div>
-        <div>number section</div>
-        <div className="keyboard">
-          <div className="greyArea">
-            {greyGroup.map((data) => {
-              return (
-                <Button symbol={data.symbol} category={"grey"} />
-              )
-            })}
+      <div className="mainContainer">
+        <div className="sectionDisplay">
+          <div className="text-white">something else</div>
+          <div className="text-white">
+          hjhj
+            {/* <input className="input" defaultValue="0" /> */}
           </div>
-          <div className="blackArea">
-            {blackGroup.map((data) => {
-              return (
-                <Button symbol={data.symbol} category={"black"} />
-              )
-            })}
+        </div>
+        <div className="sectionKeyboard">
+          <div className="w-75">
+            <div className="greyArea">
+              {greyGroup.map((data) => {
+                return (
+                  <Button symbol={data.symbol} category={"grey"} />
+                )
+              })}
+            </div>
+            <div className="blackArea">
+              {blackGroup.map((data) => {
+                return (
+                  <Button symbol={data.symbol} category={"black"} />
+                )
+              })}
+            </div>
+            <div className="blackArea">
+              <div className="blackCircle zero"><span>0</span></div>
+              <Button symbol={"."} category={"black"} />
+            </div>
           </div>
-          <div className="blackArea">
-            <Button symbol={"0"} category={"black"} />
-            <Button symbol={"."} category={"black"} />
+          <div className="w-25">
+            <div className="orangeArea">
+              {orangeGroup.map((data) => {
+                return (
+                  <Button symbol={data.symbol} category={"orange"} />
+                )
+              })}
+            </div>
           </div>
         </div>
       </div>
