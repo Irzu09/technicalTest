@@ -42,10 +42,14 @@ function TechnicalTest1() {
       <h5>Technical test 1: Basic Calculator</h5>
       <div className="mainContainer">
         <div className="sectionDisplay">
-          <div className="text-white">something else</div>
-          <div className="text-white">
-          hjhj
-            {/* <input className="input" defaultValue="0" /> */}
+          <div className="inputDiv">
+            <input type="text" className="input" placeholder="0"
+              onKeyDown={e => {
+                if (e.key === 'd') {
+                  console.log(e.key);
+                  return e.preventDefault;
+                }
+              }} />
           </div>
         </div>
         <div className="sectionKeyboard">

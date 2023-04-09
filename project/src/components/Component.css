@@ -11,6 +11,7 @@
 .sectionDisplay {
     height: 40%;
     padding: 10px;
+    display: flex;
 }
 
 .sectionKeyboard {
@@ -52,6 +53,7 @@
 .orangeCircle {
     background-color: #fe9f06;
     color: #fff;
+    margin-right: 0px !important;
 }
 
 .zero {
@@ -80,11 +82,22 @@
     gap: 10px;
 }
 
+.inputDiv {
+    margin-top: auto;
+    width: -webkit-fill-available;
+}
+
 .input {
     background-color: transparent;
     border: none;
+    outline: none;
     color: #fff;
     font-size: 64px;
-    position: relative;
-    bottom: 0;
+    width: inherit;
+    text-align: right;
+    padding: 0px 20px;
+}
+
+.input::placeholder {
+    color: white;
 }
