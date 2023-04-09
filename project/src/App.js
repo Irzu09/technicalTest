@@ -4,7 +4,7 @@ import TechnicalTest1 from './components/TechnicalTest1';
 import TechnicalTest3 from './components/TechnicalTest3';
 
 function App() {
-  const [page, setPage] = useState(false);
+  const [page, setPage] = useState(true);
 
   return (
     <>
