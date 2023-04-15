@@ -20,7 +20,7 @@ function TechnicalTest1() {
     { id: 1, symbol: "/", value: "/" },
     { id: 2, symbol: "X", value: "x" },
     { id: 3, symbol: "-", value: "-" },
-    { id: 4, symbol: "+", value: "=" },
+    { id: 4, symbol: "+", value: "+" },
     { id: 5, symbol: "=", value: "=" }
   ];
 
@@ -99,8 +99,8 @@ function TechnicalTest1() {
           })}
         </div>
         <div className="blackArea">
-          <div className="blackCircle zero"><span>0</span></div>
-          <Button symbol={"."} className={"blackCircle"} />
+          <div className="blackCircle zero" onClick={() => handleClickNumber("0")} ><span>0</span></div>
+          <Button symbol={"."} className={"blackCircle"} handleClick={() => handleClickNumber(".")} />
         </div>
       </>
     )
@@ -114,7 +114,7 @@ function TechnicalTest1() {
   function handleClickOperation(value) {
     if (value === "=") {
       let result;
-      switch (value) {
+      switch (operation) {
         case "+":
           result = parseFloat(prevValue) + parseFloat(inputValue);
           break;
