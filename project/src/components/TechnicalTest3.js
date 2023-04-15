@@ -20,6 +20,7 @@ function TechnicalTest3() {
 
   return (
     <div>
+      <h5>Technical test 3: Number that can divided by 3 and 5</h5>
       <input
         value={integer}
         onChange={(e) => setInteger(e.target.value)}

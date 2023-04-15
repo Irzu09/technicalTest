@@ -1,0 +1,116 @@
+.mainContainer {
+    max-width: 400px;
+    max-height: 800px;
+    width: 96%;
+    height: 88vh;
+    margin: auto;
+    border: 1px solid black;
+    background-color: black;
+}
+
+.sectionDisplay {
+    height: 40%;
+    padding: 10px;
+    display: flex;
+}
+
+.sectionKeyboard {
+    height: 60%;
+    padding: 10px;
+}
+
+.sectionKeyboard>div {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.sectionKeyboard,
+.sectionKeyboard>div>div {
+    display: flex;
+}
+
+.sectionKeyboard>div>div>div {
+    display: flex;
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    margin: auto;
+    font-size: 30px;
+}
+
+.greyCircle {
+    background-color: #a5a5a5;
+    cursor: pointer;
+}
+
+.blackCircle {
+    background-color: #333;
+    color: #fff;
+    cursor: pointer;
+}
+
+.orangeCircle {
+    background-color: #fe9f06;
+    color: #fff;
+    margin-right: 0px !important;
+    cursor: pointer;
+}
+
+.zero {
+    width: 155px !important;
+    border-radius: 50px !important;
+}
+
+.zero span {
+    margin-left: 30px !important;
+}
+
+.greyCircle span,
+.blackCircle span,
+.orangeCircle span {
+    margin: auto;
+}
+
+.blackArea,
+.greyArea {
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.orangeArea {
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.inputDiv {
+    margin-top: auto;
+    width: -webkit-fill-available;
+}
+
+.input {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: #fff;
+    font-size: 64px;
+    width: inherit;
+    text-align: right;
+    padding: 0px 20px;
+}
+
+.input::placeholder {
+    color: white;
+}
+
+.input input[type="number"]::-webkit-outer-spin-button,
+.input input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.input input[type="number"] {
+    -moz-appearance: textfield;
+}
