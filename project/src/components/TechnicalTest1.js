@@ -2,6 +2,7 @@ import "./Component.css";
 import { useState } from 'react';
 
 function TechnicalTest1() {
+  const [inputField, setInputField] = useState("0");
   const [inputValue, setInputValue] = useState("0");
   const [prevValue, setPrevValue] = useState("");
   const [operation, setOperation] = useState("");
@@ -18,7 +19,7 @@ function TechnicalTest1() {
 
   const orangeGroup = [
     { id: 1, symbol: "/", value: "/" },
-    { id: 2, symbol: "X", value: "x" },
+    { id: 2, symbol: "X", value: "*" },
     { id: 3, symbol: "-", value: "-" },
     { id: 4, symbol: "+", value: "+" },
     { id: 5, symbol: "=", value: "=" }
@@ -40,7 +41,9 @@ function TechnicalTest1() {
     return (
       <div className="sectionDisplay">
         <div className="inputDiv">
-          <input type="text" className="input" value={inputValue}
+          <input type="text" className="input"
+            // value={inputValue}
+            value={inputField}
             onKeyDown={e => {
               if (
                 e.key === "0" || e.key === "1" ||
@@ -107,12 +110,23 @@ function TechnicalTest1() {
   }
 
   function handleClickNumber(value) {
+    // api
+    if (inputValue === "0") setInputField(value);
+    else setInputField(inputField + value);
+
+    // manual
     if (inputValue === "0") setInputValue(value);
     else setInputValue(inputValue + value);
   }
 
   function handleClickOperation(value) {
     if (value === "=") {
+      fetch(`http://api.mathjs.org/v4/?expr=${encodeURIComponent(inputField)}`)
+        .then((response) => response.text())
+        .then((data) => setInputField(data))
+        .catch((error) => console.log(error));
+
+      // manual
       let result;
       switch (operation) {
         case "+":
@@ -140,20 +154,46 @@ function TechnicalTest1() {
     }
 
     else {
+      // api
+      setInputField(inputField + value);
+
+      // manual
       setOperation(value);
       setPrevValue(inputValue);
-      setInputValue("0");
+      setInputValue("");
     }
   }
 
   function handleClickGeneral(symbol) {
     if (symbol === "AC") {
+      // api
+      setInputField("0");
+
+      // manual
       setInputValue("0");
       setOperation("");
       setPrevValue("");
     }
 
     else if (symbol === "%" || symbol === "+/-") {
+      // api
+      if (inputField !== "0") {
+        let result;
+        switch (symbol) {
+          case "%":
+            result = `${inputField}%25`
+            break;
+
+          case "+/-":
+            result = -(inputField);
+            break;
+          default:
+            break;
+        }
+        setInputField(result);
+      }
+
+      // manual
       if (inputValue !== "0") {
         let result;
         switch (symbol) {
